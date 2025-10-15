@@ -10,10 +10,29 @@ const root = ReactDOM.createRoot(
 );
 
 // 3. Renderizar com a root
+// root.render(
+    
+//     // O <React.StrictMode> é opcional, mas recomendado para detectar problemas.
+//     <React.StrictMode>
+//         <h1>Meu primeiro render</h1>
+//     </React.StrictMode>
+// );
+
+
+// -------------------------AULA 05 (JSX)-------------------------------------
+
+// Criando um elemento
+
+const elemento = React.createElement('h1', {}, 'Testando...');
+
 root.render(
     
     // O <React.StrictMode> é opcional, mas recomendado para detectar problemas.
+
+    // Enjetando a constante ( elemento ) usando { }.
     <React.StrictMode>
-        <h1>Meu primeiro render</h1>
+        {elemento} 
     </React.StrictMode>
 );
+
+
