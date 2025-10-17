@@ -8,12 +8,13 @@ import ReactDOM from 'react-dom/client';
 class MeuComponente extends React.Component{
 
     // Função
-    mensagem(){
-        alert('Olá Mundo!');
+    mensagem(nome){
+        alert('Olá ' + nome);
+        console.log(this);
     }
 
     render(){
-        return <button onClick={this.mensagem}>Clique aqui</button>;
+        return <button onClick={this.mensagem.bind(this, 'Carlos')}>Clique aqui</button>;
     }
 }
 
