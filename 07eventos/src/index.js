@@ -5,16 +5,26 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 // Componente
-class MeuComponente extends React.Component{
+class MeuComponente extends React.Component {
 
     // Função
-    mensagem(nome){
+    mensagem(nome) {
         alert('Olá ' + nome);
         console.log(this);
     }
 
-    render(){
-        return <button onClick={this.mensagem.bind(this, 'Carlos')}>Clique aqui</button>;
+    // ArrowFunction
+    minhaArrowFunction = (curso) => {
+        alert('Estou fazendo o curso de ' + curso);
+    }
+
+    render() {
+        return(
+        <div>
+            <button onClick={this.mensagem.bind(this, 'Carlos')}>Clique aqui</button>
+            <button onClick={() => this.minhaArrowFunction('ReactJS')}>Arrow Function</button>
+        </div>
+        );
     }
 }
 
