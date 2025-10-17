@@ -13,9 +13,16 @@ class MeuComponente extends React.Component {
         console.log(this);
     }
 
-    // ArrowFunction
     minhaArrowFunction = (curso) => {
         alert('Estou fazendo o curso de ' + curso);
+    }
+
+    // teclado = (obj) =>{
+    //     alert('Teste');
+    // }
+
+    teclado = (obj) =>{
+        console.log(obj.target.value);
     }
 
     render() {
@@ -23,6 +30,10 @@ class MeuComponente extends React.Component {
         <div>
             <button onClick={this.mensagem.bind(this, 'Carlos')}>Clique aqui</button>
             <button onClick={() => this.minhaArrowFunction('ReactJS')}>Arrow Function</button>
+        
+            <hr />
+            <input type='text' onChange={this.teclado} />
+        
         </div>
         );
     }
