@@ -36,6 +36,8 @@ class Componente extends React.Component {
 
                 <h1 style={estilo}>CSS através de variáveis e constantes</h1>
 
+                <h1 className='minhaClasse'>CSS através de classes</h1>
+
             </ul>
         );
 
