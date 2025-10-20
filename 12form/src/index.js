@@ -8,14 +8,15 @@ import ReactDOM from 'react-dom/client';
 class Componente extends React.Component{
 
     // Função
-    minhaFuncao = () => {
+    minhaFuncao = (elemento) => {
+        elemento.preventDefault();
         alert ('Testando evento onSubmit');
     }
 
     // Render
     render(){
         return (
-           <form onSubmit={this.minhaFuncao}>
+           <form onSubmit={this.minhaFuncao} action={'http://www.google.com'}>
              <input type='submit' />
            </form>
         );
