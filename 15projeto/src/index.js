@@ -10,6 +10,9 @@ import './estilos.css';
 // Importar fomulário
 import Formulario from './formulario';
 
+// Importar tabela
+import Tabela from './tabela';
+
 // Componente
 class Principal extends React.Component{
     
@@ -20,6 +23,7 @@ class Principal extends React.Component{
         return(
             <div>
                 <Formulario />
+                <Tabela />
             </div>
         );
     }
