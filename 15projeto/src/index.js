@@ -4,6 +4,12 @@ import React from 'react';
 // Módulo 'ReactRoot' de 'create-dom/cliente'
 import ReactDOM from 'react-dom/client';
 
+// Importar CSS
+import './estilos.css'; 
+
+// Importar fomulário
+import Formulario from './formulario';
+
 // Componente
 class Principal extends React.Component{
     
@@ -13,9 +19,9 @@ class Principal extends React.Component{
 
         return(
             <div>
-                <h1>Iniciando o projeto final</h1>
+                <Formulario />
             </div>
-        )
+        );
     }
 }
 
@@ -29,4 +35,4 @@ root.render(
     <React.StrictMode>
         <Principal />
     </React.StrictMode>
-)
+);
