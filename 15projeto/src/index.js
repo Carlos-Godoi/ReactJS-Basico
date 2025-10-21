@@ -22,7 +22,8 @@ class Principal extends React.Component{
 
         this.state = {
             nome : '',
-            idade : null
+            idade : null,
+            vetor : []
         }
     }
 
@@ -36,7 +37,15 @@ class Principal extends React.Component{
     // Função clique (onSubmit)
     aoClicar = (botao) => {
         botao.preventDefault();
-        console.log(this.state);
+        
+        var copiaVetor = [...this.state.vetor];
+
+        copiaVetor.push({
+            'nome' : this.state.nome,
+            'idade' : this.state.idade
+        });
+
+        this.setState({vetor : copiaVetor});
     }
 
 
@@ -45,7 +54,7 @@ class Principal extends React.Component{
         return(
             <div>
                 <Formulario funcaoBotao={this.aoClicar} funcaoCampo={this.aoDigitar}/>
-                <Tabela />
+                <Tabela dados={this.state.vetor} />
             </div>
         );
     }
