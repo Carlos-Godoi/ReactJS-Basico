@@ -16,23 +16,47 @@ import Tabela from './tabela';
 // Componente
 class Principal extends React.Component{
     
+    // Construtor
+    constructor(props){
+        super(props);
+
+        this.state = {
+            nome : '',
+            idade : null
+        }
+    }
+
+
+    // Função ao digitar (onChange)
+    aoDigitar = (campo) => {
+        this.setState({[campo.target.name] : campo.target.value});
+    }
+
+
+    // Função clique (onSubmit)
+    aoClicar = (botao) => {
+        botao.preventDefault();
+        console.log(this.state);
+    }
+
 
     // Render
     render(){
-
         return(
             <div>
-                <Formulario />
+                <Formulario funcaoBotao={this.aoClicar} funcaoCampo={this.aoDigitar}/>
                 <Tabela />
             </div>
         );
     }
 }
 
+
 // Criar a raiz (root)
 const root = ReactDOM.createRoot(
     document.getElementById('root')
 );
+
 
 // Rederizar com a root
 root.render(
