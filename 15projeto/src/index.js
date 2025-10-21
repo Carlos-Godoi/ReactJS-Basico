@@ -22,7 +22,7 @@ class Principal extends React.Component{
 
         this.state = {
             nome : '',
-            idade : null,
+            idade : '',
             vetor : []
         }
     }
@@ -46,6 +46,12 @@ class Principal extends React.Component{
         });
 
         this.setState({vetor : copiaVetor});
+
+        // Limpar campos do formulário
+        this.setState({
+            nome : '',
+            idade : ''
+        });
     }
 
 
@@ -53,7 +59,7 @@ class Principal extends React.Component{
     render(){
         return(
             <div>
-                <Formulario funcaoBotao={this.aoClicar} funcaoCampo={this.aoDigitar}/>
+                <Formulario campoNome={this.state.nome} campoIdade={this.state.idade}  funcaoBotao={this.aoClicar} funcaoCampo={this.aoDigitar}/>
                 <Tabela dados={this.state.vetor} />
             </div>
         );
